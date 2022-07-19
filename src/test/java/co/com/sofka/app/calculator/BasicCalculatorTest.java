@@ -1,19 +1,19 @@
 package co.com.sofka.app.calculator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BasicCalculatorTest {
     private final BasicCalculator basicCalculator = new BasicCalculator();
 
     @Test
     @DisplayName("Testing sum: 1+1=2")
-    public void sum() {
+    void sum() {
         // Arrange
         Long number1 = 1L;
         Long number2 = 1L;
@@ -34,14 +34,14 @@ public class BasicCalculatorTest {
             "49,  51, 100",
             "1,  100, 101"
     })
-    public void severalSums(Long first, Long second, Long expectedResult) {
+    void severalSums(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.sum(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
 
     @Test
     @DisplayName("Testing rest: 32-15=17")
-    public void rest() {
+    void rest() {
         // Arrange
         Long number1 = 32L;
         Long number2 = 15L;
@@ -62,14 +62,14 @@ public class BasicCalculatorTest {
             "50,  27, 23",
             "1,  100, -99"
     })
-    public void severalSubstracts(Long first, Long second, Long expectedResult) {
+    void severalSubstracts(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.rest(first, second),
                 () -> first + " - " + second + " should equal " + expectedResult);
     }
 
     @Test
     @DisplayName("Testing multiply: 5*2=10")
-    public void multiply() {
+    void multiply() {
         // Arrange
         Long number1 = 5L;
         Long number2 = 2L;
